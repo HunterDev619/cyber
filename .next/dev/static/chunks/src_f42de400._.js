@@ -164,7 +164,7 @@ const NAV_LINKS = [
         href: '#contact'
     }
 ];
-const AI_AGENCY_URL = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_AI_AGENCY_URL ?? 'https://your-ai-agency-domain.com';
+const AI_AGENCY_URL = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_AI_AGENCY_URL ?? 'https://ai-j8nq.vercel.app/';
 function Navbar({ variant }) {
     _s();
     const [scrolled, setScrolled] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -752,9 +752,14 @@ __turbopack_context__.s([
     ()=>Hero
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/utils/use-in-view.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$animation$2f$animate$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/animation/animate/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
@@ -763,15 +768,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const stats = [
     {
         label: 'Clients Protected',
-        value: '500+'
+        value: 500,
+        suffix: '+'
     },
     {
         label: 'Threat Detection Rate',
-        value: '99.9%'
+        value: 99.9,
+        suffix: '%'
     },
     {
         label: 'Response Time',
-        value: '< 15 min'
+        value: 15,
+        prefix: '< ',
+        suffix: ' min'
     }
 ];
 const hidden = {
@@ -788,7 +797,56 @@ const ease = [
     0.25,
     1
 ];
+function AnimatedStatValue({ stat, active }) {
+    _s();
+    const [display, setDisplay] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const inView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useInView"])(ref, {
+        margin: '-80px'
+    });
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AnimatedStatValue.useEffect": ()=>{
+            if (!inView && !active) return;
+            const controls = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$animation$2f$animate$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["animate"])(0, stat.value, {
+                duration: 1.4,
+                ease: 'easeOut',
+                onUpdate: {
+                    "AnimatedStatValue.useEffect.controls": (v)=>setDisplay(v)
+                }["AnimatedStatValue.useEffect.controls"]
+            });
+            return ({
+                "AnimatedStatValue.useEffect": ()=>controls.stop()
+            })["AnimatedStatValue.useEffect"];
+        }
+    }["AnimatedStatValue.useEffect"], [
+        inView,
+        active,
+        stat.value
+    ]);
+    const formatted = stat.label === 'Threat Detection Rate' ? display.toFixed(1) : Math.round(display).toString();
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+        ref: ref,
+        className: "text-4xl font-bold tabular-nums text-gray-950",
+        children: [
+            stat.prefix,
+            formatted,
+            stat.suffix
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/cyber/Hero.tsx",
+        lineNumber: 46,
+        columnNumber: 5
+    }, this);
+}
+_s(AnimatedStatValue, "VAu547mC8WzifarNwyENytoudes=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useInView"]
+    ];
+});
+_c = AnimatedStatValue;
 function Hero() {
+    _s1();
+    const [hoveredIndex, setHoveredIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "hero",
         className: "relative overflow-hidden bg-white py-24 md:py-32",
@@ -801,7 +859,7 @@ function Hero() {
                 className: "pointer-events-none absolute inset-0 bg-white/80"
             }, void 0, false, {
                 fileName: "[project]/src/components/cyber/Hero.tsx",
-                lineNumber: 29,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -824,19 +882,19 @@ function Hero() {
                                 children: "Cybersecurity."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cyber/Hero.tsx",
-                                lineNumber: 39,
+                                lineNumber: 78,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                 fileName: "[project]/src/components/cyber/Hero.tsx",
-                                lineNumber: 40,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, this),
                             "Zero Compromises."
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cyber/Hero.tsx",
-                        lineNumber: 32,
+                        lineNumber: 71,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -851,7 +909,7 @@ function Hero() {
                         children: "Protect your infrastructure with AI-powered threat detection, expert-led testing, and 24/7 monitoring."
                     }, void 0, false, {
                         fileName: "[project]/src/components/cyber/Hero.tsx",
-                        lineNumber: 44,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -878,7 +936,7 @@ function Hero() {
                                 children: "Get Security Assessment"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cyber/Hero.tsx",
-                                lineNumber: 60,
+                                lineNumber: 99,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -890,13 +948,13 @@ function Hero() {
                                 children: "View Case Studies"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cyber/Hero.tsx",
-                                lineNumber: 67,
+                                lineNumber: 106,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cyber/Hero.tsx",
-                        lineNumber: 54,
+                        lineNumber: 93,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -908,15 +966,21 @@ function Hero() {
                             ease
                         },
                         className: "mt-16 border-t border-gray-200 pt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start divide-y sm:divide-y-0 sm:divide-x divide-gray-200 gap-8 sm:gap-0",
-                        children: stats.map((stat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: stats.map((stat, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                 className: "flex flex-col items-center gap-1 sm:px-10 first:pl-0 last:pr-0",
+                                whileHover: {
+                                    y: -6,
+                                    scale: 1.05
+                                },
+                                onMouseEnter: ()=>setHoveredIndex(i),
+                                onMouseLeave: ()=>setHoveredIndex((prev)=>prev === i ? null : prev),
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-4xl font-bold tabular-nums text-gray-950",
-                                        children: stat.value
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedStatValue, {
+                                        stat: stat,
+                                        active: hoveredIndex === i
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cyber/Hero.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 129,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -924,36 +988,38 @@ function Hero() {
                                         children: stat.label
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cyber/Hero.tsx",
-                                        lineNumber: 87,
+                                        lineNumber: 130,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, stat.label, true, {
                                 fileName: "[project]/src/components/cyber/Hero.tsx",
-                                lineNumber: 83,
+                                lineNumber: 122,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/cyber/Hero.tsx",
-                        lineNumber: 76,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cyber/Hero.tsx",
-                lineNumber: 31,
+                lineNumber: 70,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/cyber/Hero.tsx",
-        lineNumber: 19,
+        lineNumber: 58,
         columnNumber: 5
     }, this);
 }
-_c = Hero;
-var _c;
-__turbopack_context__.k.register(_c, "Hero");
+_s1(Hero, "9iVkaaUbrFxVCU6MuI1jK6905pI=");
+_c1 = Hero;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "AnimatedStatValue");
+__turbopack_context__.k.register(_c1, "Hero");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -1240,10 +1306,46 @@ function FeaturedCard({ service }) {
     }, this);
 }
 _c = FeaturedCard;
-function ServiceCard({ service }) {
+function ServiceCard({ service, index }) {
     const Icon = iconMap[service.icon] ?? __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Shield$3e$__["Shield"];
+    const hoverVariants = index % 5 === 4 ? {
+        y: [
+            -4,
+            4,
+            -4
+        ],
+        rotate: [
+            0,
+            3,
+            -3,
+            0
+        ]
+    } : index % 4 === 0 || index % 4 === 1 ? {
+        x: [
+            -16,
+            0
+        ]
+    } : {
+        y: [
+            -16,
+            0
+        ]
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
         variants: cardVariant,
+        whileHover: hoverVariants,
+        whileTap: {
+            scale: 0.97
+        },
+        transition: {
+            duration: 2,
+            ease: [
+                0.25,
+                0.1,
+                0.25,
+                1
+            ]
+        },
         className: "group relative flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-6 transition-all duration-300   hover:border-purple-700 hover:shadow-[0_0_20px_rgba(109,40,217,0.2)]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1256,12 +1358,12 @@ function ServiceCard({ service }) {
                             className: "transition-transform duration-300 group-hover:scale-105"
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                            lineNumber: 93,
+                            lineNumber: 103,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                        lineNumber: 92,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1269,13 +1371,13 @@ function ServiceCard({ service }) {
                         children: service.title
                     }, void 0, false, {
                         fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                        lineNumber: 95,
+                        lineNumber: 105,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                lineNumber: 91,
+                lineNumber: 101,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1283,7 +1385,7 @@ function ServiceCard({ service }) {
                 children: service.description
             }, void 0, false, {
                 fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                lineNumber: 98,
+                lineNumber: 108,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1291,7 +1393,7 @@ function ServiceCard({ service }) {
                 children: service.caseStudySnippet
             }, void 0, false, {
                 fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                lineNumber: 102,
+                lineNumber: 112,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1300,13 +1402,13 @@ function ServiceCard({ service }) {
                 children: service.cta
             }, void 0, false, {
                 fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                lineNumber: 106,
+                lineNumber: 116,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-        lineNumber: 86,
+        lineNumber: 93,
         columnNumber: 5
     }, this);
 }
@@ -1328,7 +1430,7 @@ function ServicesGrid() {
                             children: "Services"
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                            lineNumber: 124,
+                            lineNumber: 134,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1336,7 +1438,7 @@ function ServicesGrid() {
                             children: "Everything You Need to Stay Secure"
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                            lineNumber: 127,
+                            lineNumber: 137,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1344,13 +1446,13 @@ function ServicesGrid() {
                             children: "End-to-end security solutions designed for modern enterprises facing evolving threats."
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                            lineNumber: 130,
+                            lineNumber: 140,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                    lineNumber: 123,
+                    lineNumber: 133,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1367,38 +1469,39 @@ function ServicesGrid() {
                             service: featuredService
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                            lineNumber: 144,
+                            lineNumber: 154,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4",
-                            children: gridServices.map((service)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ServiceCard, {
-                                    service: service
+                            children: gridServices.map((service, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ServiceCard, {
+                                    service: service,
+                                    index: index
                                 }, service.id, false, {
                                     fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                                    lineNumber: 149,
+                                    lineNumber: 159,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                            lineNumber: 147,
+                            lineNumber: 157,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-                    lineNumber: 136,
+                    lineNumber: 146,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-            lineNumber: 122,
+            lineNumber: 132,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/cyber/ServicesGrid.tsx",
-        lineNumber: 121,
+        lineNumber: 131,
         columnNumber: 5
     }, this);
 }
@@ -1461,13 +1564,39 @@ const CASE_STUDIES = [
 function CaseStudyCard({ study }) {
     _s();
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
         role: "button",
         tabIndex: 0,
         "aria-expanded": isOpen,
         onClick: ()=>setIsOpen((prev)=>!prev),
         onKeyDown: (e)=>{
             if (e.key === 'Enter' || e.key === ' ') setIsOpen((prev)=>!prev);
+        },
+        initial: {
+            opacity: 0,
+            y: 24
+        },
+        whileInView: {
+            opacity: 1,
+            y: 0
+        },
+        viewport: {
+            once: true,
+            margin: '-80px'
+        },
+        animate: {
+            rotateY: isOpen ? 360 : 0
+        },
+        whileHover: {
+            rotateY: 8
+        },
+        whileTap: {
+            scale: 0.97,
+            rotateY: -8
+        },
+        transition: {
+            duration: 0.6,
+            ease: 'easeInOut'
         },
         className: `cursor-pointer rounded-xl border bg-white p-6 transition-all duration-300 select-none
         ${isOpen ? 'border-purple-700 shadow-[0_0_20px_rgba(109,40,217,0.15)]' : 'border-gray-200 hover:border-gray-300'}`,
@@ -1482,7 +1611,7 @@ function CaseStudyCard({ study }) {
                                 children: study.industry
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                                lineNumber: 74,
+                                lineNumber: 83,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1490,7 +1619,7 @@ function CaseStudyCard({ study }) {
                                 children: study.company
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                                lineNumber: 77,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1498,13 +1627,13 @@ function CaseStudyCard({ study }) {
                                 children: study.teaser
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                                lineNumber: 78,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                        lineNumber: 73,
+                        lineNumber: 82,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1519,18 +1648,18 @@ function CaseStudyCard({ study }) {
                             size: 18
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                            lineNumber: 85,
+                            lineNumber: 94,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                        lineNumber: 80,
+                        lineNumber: 89,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                lineNumber: 72,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1576,7 +1705,7 @@ function CaseStudyCard({ study }) {
                                         children: label
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 115,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1584,28 +1713,28 @@ function CaseStudyCard({ study }) {
                                         children: text
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 118,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, label, true, {
                                 fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                                lineNumber: 105,
+                                lineNumber: 114,
                                 columnNumber: 17
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                        lineNumber: 99,
+                        lineNumber: 108,
                         columnNumber: 13
                     }, this)
                 }, "content", false, {
                     fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                    lineNumber: 91,
+                    lineNumber: 100,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                lineNumber: 89,
+                lineNumber: 98,
                 columnNumber: 7
             }, this)
         ]
@@ -1632,7 +1761,7 @@ function CaseStudies() {
                             children: "Proven Results"
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                            lineNumber: 125,
+                            lineNumber: 134,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1640,7 +1769,7 @@ function CaseStudies() {
                             children: "Real Threats. Real Outcomes."
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                            lineNumber: 128,
+                            lineNumber: 137,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1648,13 +1777,13 @@ function CaseStudies() {
                             children: "Real results from real clients. Click any card to see the full story."
                         }, void 0, false, {
                             fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                            lineNumber: 131,
+                            lineNumber: 140,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                    lineNumber: 124,
+                    lineNumber: 133,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1663,23 +1792,23 @@ function CaseStudies() {
                             study: study
                         }, study.id, false, {
                             fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                            lineNumber: 138,
+                            lineNumber: 147,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-                    lineNumber: 136,
+                    lineNumber: 145,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-            lineNumber: 123,
+            lineNumber: 132,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/cyber/CaseStudies.tsx",
-        lineNumber: 122,
+        lineNumber: 131,
         columnNumber: 5
     }, this);
 }

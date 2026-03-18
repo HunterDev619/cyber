@@ -60,12 +60,21 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
+    <motion.div
       role="button"
       tabIndex={0}
       aria-expanded={isOpen}
       onClick={() => setIsOpen((prev) => !prev)}
-      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setIsOpen((prev) => !prev); }}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') setIsOpen((prev) => !prev);
+      }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      animate={{ rotateY: isOpen ? 360 : 0 }}
+      whileHover={{ rotateY: 8 }}
+      whileTap={{ scale: 0.97, rotateY: -8 }}
+      transition={{ duration: 0.6, ease: 'easeInOut' }}
       className={`cursor-pointer rounded-xl border bg-white p-6 transition-all duration-300 select-none
         ${isOpen ? 'border-purple-700 shadow-[0_0_20px_rgba(109,40,217,0.15)]' : 'border-gray-200 hover:border-gray-300'}`}
     >
@@ -113,7 +122,7 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
 

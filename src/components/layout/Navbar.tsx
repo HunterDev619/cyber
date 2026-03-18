@@ -19,7 +19,7 @@ const NAV_LINKS = [
 ];
 
 const AI_AGENCY_URL =
-  process.env.NEXT_PUBLIC_AI_AGENCY_URL ?? 'https://your-ai-agency-domain.com';
+  process.env.NEXT_PUBLIC_AI_AGENCY_URL ?? 'https://ai-j8nq.vercel.app/';
 
 export default function Navbar({ variant }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);

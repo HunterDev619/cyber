@@ -79,12 +79,22 @@ function FeaturedCard({ service }: { service: CyberService }) {
   );
 }
 
-function ServiceCard({ service }: { service: CyberService }) {
+function ServiceCard({ service, index }: { service: CyberService; index: number }) {
   const Icon = iconMap[service.icon] ?? Shield;
+
+  const hoverVariants =
+    index % 5 === 4
+      ? { y: [-4, 4, -4], rotate: [0, 3, -3, 0] }
+      : index % 4 === 0 || index % 4 === 1
+      ? { x: [-16, 0] }
+      : { y: [-16, 0] };
 
   return (
     <motion.div
       variants={cardVariant}
+      whileHover={hoverVariants}
+      whileTap={{ scale: 0.97 }}
+      transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] as const }}
       className="group relative flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-6 transition-all duration-300
         hover:border-purple-700 hover:shadow-[0_0_20px_rgba(109,40,217,0.2)]"
     >
@@ -145,8 +155,8 @@ export default function ServicesGrid() {
 
           {/* Clean 3-col grid for remaining 12 services */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {gridServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+            {gridServices.map((service, index) => (
+              <ServiceCard key={service.id} service={service} index={index} />
             ))}
           </div>
         </motion.div>

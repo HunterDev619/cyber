@@ -1,20 +1,59 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useInView, animate } from 'framer-motion';
 import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
 
-const stats = [
-  { label: 'Clients Protected', value: '500+' },
-  { label: 'Threat Detection Rate', value: '99.9%' },
-  { label: 'Response Time', value: '< 15 min' },
+interface Stat {
+  label: string;
+  value: number;
+  prefix?: string;
+  suffix?: string;
+}
+
+const stats: Stat[] = [
+  { label: 'Clients Protected', value: 500, suffix: '+' },
+  { label: 'Threat Detection Rate', value: 99.9, suffix: '%' },
+  { label: 'Response Time', value: 15, prefix: '< ', suffix: ' min' },
 ];
 
 const hidden = { opacity: 0, y: 24 };
 const visible = { opacity: 1, y: 0 };
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
+function AnimatedStatValue({ stat, active }: { stat: Stat; active: boolean }) {
+  const [display, setDisplay] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { margin: '-80px' });
+
+  useEffect(() => {
+    if (!inView && !active) return;
+    const controls = animate(0, stat.value, {
+      duration: 1.4,
+      ease: 'easeOut',
+      onUpdate: (v) => setDisplay(v),
+    });
+    return () => controls.stop();
+  }, [inView, active, stat.value]);
+
+  const formatted =
+    stat.label === 'Threat Detection Rate'
+      ? display.toFixed(1)
+      : Math.round(display).toString();
+
+  return (
+    <span ref={ref} className="text-4xl font-bold tabular-nums text-gray-950">
+      {stat.prefix}
+      {formatted}
+      {stat.suffix}
+    </span>
+  );
+}
+
 export default function Hero() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <section
       id="hero"
@@ -79,13 +118,19 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.45, ease }}
           className="mt-16 border-t border-gray-200 pt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start divide-y sm:divide-y-0 sm:divide-x divide-gray-200 gap-8 sm:gap-0"
         >
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center gap-1 sm:px-10 first:pl-0 last:pr-0">
-              <span className="text-4xl font-bold tabular-nums text-gray-950">
-                {stat.value}
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              className="flex flex-col items-center gap-1 sm:px-10 first:pl-0 last:pr-0"
+              whileHover={{ y: -6, scale: 1.05 }}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex((prev) => (prev === i ? null : prev))}
+            >
+              <AnimatedStatValue stat={stat} active={hoveredIndex === i} />
+              <span className="text-xs uppercase tracking-widest text-gray-400">
+                {stat.label}
               </span>
-              <span className="text-xs uppercase tracking-widest text-gray-400">{stat.label}</span>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
