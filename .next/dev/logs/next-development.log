@@ -75,3 +75,10 @@
 [02:09:01.943] Server  LOG     ✓ Compiled in 311ms
 [02:09:12.687] Server  LOG     ✓ Compiled in 42ms
 [02:09:20.576] Server  LOG     ✓ Compiled in 43ms
+[02:13:51.933] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:13:52.140] Browser WARN    Image with src "/img/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:39:45.476] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:39:45.476] Browser WARN    Image with src "/img/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:41:33.674] Server  LOG     ✓ Compiled in 47ms
+[02:41:49.885] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:41:50.099] Browser WARN    Image with src "/img/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.

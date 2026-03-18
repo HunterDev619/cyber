@@ -81,20 +81,27 @@ function FeaturedCard({ service }: { service: CyberService }) {
 
 function ServiceCard({ service, index }: { service: CyberService; index: number }) {
   const Icon = iconMap[service.icon] ?? Shield;
+  const row = Math.floor(index / 3); // 0,1,2,3 for 4 rows
 
-  const hoverVariants =
-    index % 5 === 4
-      ? { y: [-4, 4, -4], rotate: [0, 3, -3, 0] }
-      : index % 4 === 0 || index % 4 === 1
-      ? { x: [-16, 0] }
-      : { y: [-16, 0] };
+  const commonProps =
+    row <= 1
+      ? {
+          // First 2 rows: keep original subtle hover only
+          whileHover: { y: -4, scale: 1.02 },
+          whileTap: { scale: 0.98 },
+          transition: { duration: 0.25 },
+        }
+      : {
+          // Last 2 rows: flow left/right over 2s on hover
+          whileHover: { x: [-16, 16, 0] },
+          whileTap: { scale: 0.97 },
+          transition: { duration: 2, ease: [0.25, 0.1, 0.25, 1] as const },
+        };
 
   return (
     <motion.div
       variants={cardVariant}
-      whileHover={hoverVariants}
-      whileTap={{ scale: 0.97 }}
-      transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] as const }}
+      {...commonProps}
       className="group relative flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-6 transition-all duration-300
         hover:border-purple-700 hover:shadow-[0_0_20px_rgba(109,40,217,0.2)]"
     >
