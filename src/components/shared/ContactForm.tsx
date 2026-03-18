@@ -13,9 +13,14 @@ interface FormState {
 interface Props {
   /** Full Tailwind classes for the submit button (bg, text, hover) */
   accentClass?: string;
+  /** Field styling variant for light/white sections */
+  variant?: 'light' | 'dark';
 }
 
-export default function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-white' }: Props) {
+export default function ContactForm({
+  accentClass = 'bg-purple-700 hover:bg-purple-600 text-white',
+  variant = 'dark',
+}: Props) {
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
@@ -60,17 +65,28 @@ export default function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purp
     type = 'text',
     required = false,
   ) {
+    const isLight = variant === 'light';
     return (
       <div>
-        <label htmlFor={id} className="block text-sm font-medium text-gray-300 mb-1">
-          {label}{required && <span className="text-purple-400 ml-0.5">*</span>}
+        <label
+          htmlFor={id}
+          className={`block text-sm font-medium mb-1 ${
+            isLight ? 'text-gray-700' : 'text-gray-300'
+          }`}
+        >
+          {label}
+          {required && <span className="text-purple-400 ml-0.5">*</span>}
         </label>
         <input
           id={id}
           type={type}
           value={form[id]}
           onChange={(e) => setForm((prev) => ({ ...prev, [id]: e.target.value }))}
-          className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
+          className={`w-full rounded-lg border px-4 py-2.5 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 ${
+            isLight
+              ? 'border-gray-200 bg-white text-gray-900 focus:border-purple-500 focus:ring-purple-500'
+              : 'border-gray-700 bg-gray-800 text-white placeholder-gray-500 focus:border-purple-500 focus:ring-purple-500'
+          }`}
         />
         {errors[id] && <p className="mt-1 text-xs text-red-400">{errors[id]}</p>}
       </div>
@@ -110,7 +126,11 @@ export default function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purp
           rows={4}
           value={form.message}
           onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-          className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 resize-none"
+          className={`w-full rounded-lg border px-4 py-2.5 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 resize-none ${
+            variant === 'light'
+              ? 'border-gray-200 bg-white text-gray-900 focus:border-purple-500 focus:ring-purple-500'
+              : 'border-gray-700 bg-gray-800 text-white placeholder-gray-500 focus:border-purple-500 focus:ring-purple-500'
+          }`}
         />
         {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}
       </div>

@@ -84,7 +84,6 @@
     --color-purple-500: #ac4bff;
     --color-purple-600: #9810fa;
     --color-purple-700: #8200da;
-    --color-purple-800: #6e11b0;
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
@@ -161,7 +160,6 @@
       --color-purple-500: lab(52.0183% 66.11 -78.2316);
       --color-purple-600: lab(43.0295% 75.21 -86.5669);
       --color-purple-700: lab(36.1758% 69.8525 -80.0381);
-      --color-purple-800: lab(30.6017% 56.7637 -64.4751);
       --color-gray-50: lab(98.2596% -.247031 -.706708);
       --color-gray-100: lab(96.1596% -.082314 -1.13575);
       --color-gray-200: lab(91.6229% -.159085 -2.26791);
@@ -891,6 +889,10 @@
     border-color: #0000;
   }
 
+  .bg-\[rgb\(13\,13\,18\)\] {
+    background-color: #0d0d12;
+  }
+
   .bg-background {
     background-color: var(--background);
   }
@@ -1318,6 +1320,10 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .placeholder-gray-400::placeholder {
+    color: var(--color-gray-400);
+  }
+
   .placeholder-gray-500::placeholder {
     color: var(--color-gray-500);
   }
@@ -1489,12 +1495,6 @@
   @media (hover: hover) {
     .hover\:bg-purple-700:hover {
       background-color: var(--color-purple-700);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-purple-800:hover {
-      background-color: var(--color-purple-800);
     }
   }
 

@@ -1965,7 +1965,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var _s = __turbopack_context__.k.signature();
 'use client';
 ;
-function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-white' }) {
+function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-white', variant = 'dark' }) {
     _s();
     const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         name: '',
@@ -2011,11 +2011,12 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
         }
     }
     function field(id, label, type = 'text', required = false) {
+        const isLight = variant === 'light';
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                     htmlFor: id,
-                    className: "block text-sm font-medium text-gray-300 mb-1",
+                    className: `block text-sm font-medium mb-1 ${isLight ? 'text-gray-700' : 'text-gray-300'}`,
                     children: [
                         label,
                         required && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2023,13 +2024,13 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                             children: "*"
                         }, void 0, false, {
                             fileName: "[project]/src/components/shared/ContactForm.tsx",
-                            lineNumber: 66,
-                            columnNumber: 31
+                            lineNumber: 78,
+                            columnNumber: 24
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/shared/ContactForm.tsx",
-                    lineNumber: 65,
+                    lineNumber: 71,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2040,10 +2041,10 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                                 ...prev,
                                 [id]: e.target.value
                             })),
-                    className: "w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
+                    className: `w-full rounded-lg border px-4 py-2.5 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 ${isLight ? 'border-gray-200 bg-white text-gray-900 focus:border-purple-500 focus:ring-purple-500' : 'border-gray-700 bg-gray-800 text-white placeholder-gray-500 focus:border-purple-500 focus:ring-purple-500'}`
                 }, void 0, false, {
                     fileName: "[project]/src/components/shared/ContactForm.tsx",
-                    lineNumber: 68,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this),
                 errors[id] && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2051,13 +2052,13 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                     children: errors[id]
                 }, void 0, false, {
                     fileName: "[project]/src/components/shared/ContactForm.tsx",
-                    lineNumber: 75,
+                    lineNumber: 91,
                     columnNumber: 24
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/shared/ContactForm.tsx",
-            lineNumber: 64,
+            lineNumber: 70,
             columnNumber: 7
         }, this);
     }
@@ -2070,7 +2071,7 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                     children: "Message Sent!"
                 }, void 0, false, {
                     fileName: "[project]/src/components/shared/ContactForm.tsx",
-                    lineNumber: 83,
+                    lineNumber: 99,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2078,7 +2079,7 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                     children: "We'll be in touch within one business day."
                 }, void 0, false, {
                     fileName: "[project]/src/components/shared/ContactForm.tsx",
-                    lineNumber: 84,
+                    lineNumber: 100,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2087,13 +2088,13 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                     children: "Send another message"
                 }, void 0, false, {
                     fileName: "[project]/src/components/shared/ContactForm.tsx",
-                    lineNumber: 85,
+                    lineNumber: 101,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/shared/ContactForm.tsx",
-            lineNumber: 82,
+            lineNumber: 98,
             columnNumber: 7
         }, this);
     }
@@ -2112,7 +2113,7 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/shared/ContactForm.tsx",
-                lineNumber: 97,
+                lineNumber: 113,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2127,13 +2128,13 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                                 children: "*"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/shared/ContactForm.tsx",
-                                lineNumber: 106,
+                                lineNumber: 122,
                                 columnNumber: 18
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/shared/ContactForm.tsx",
-                        lineNumber: 105,
+                        lineNumber: 121,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2144,10 +2145,10 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                                     ...prev,
                                     message: e.target.value
                                 })),
-                        className: "w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 resize-none"
+                        className: `w-full rounded-lg border px-4 py-2.5 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 resize-none ${variant === 'light' ? 'border-gray-200 bg-white text-gray-900 focus:border-purple-500 focus:ring-purple-500' : 'border-gray-700 bg-gray-800 text-white placeholder-gray-500 focus:border-purple-500 focus:ring-purple-500'}`
                     }, void 0, false, {
                         fileName: "[project]/src/components/shared/ContactForm.tsx",
-                        lineNumber: 108,
+                        lineNumber: 124,
                         columnNumber: 9
                     }, this),
                     errors.message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2155,13 +2156,13 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                         children: errors.message
                     }, void 0, false, {
                         fileName: "[project]/src/components/shared/ContactForm.tsx",
-                        lineNumber: 115,
+                        lineNumber: 135,
                         columnNumber: 28
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/shared/ContactForm.tsx",
-                lineNumber: 104,
+                lineNumber: 120,
                 columnNumber: 7
             }, this),
             status === 'error' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2169,7 +2170,7 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                 children: "Something went wrong. Please try again."
             }, void 0, false, {
                 fileName: "[project]/src/components/shared/ContactForm.tsx",
-                lineNumber: 119,
+                lineNumber: 139,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2179,13 +2180,13 @@ function ContactForm({ accentClass = 'bg-purple-700 hover:bg-purple-600 text-whi
                 children: status === 'loading' ? 'Sending…' : 'Send Message'
             }, void 0, false, {
                 fileName: "[project]/src/components/shared/ContactForm.tsx",
-                lineNumber: 122,
+                lineNumber: 142,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/shared/ContactForm.tsx",
-        lineNumber: 96,
+        lineNumber: 112,
         columnNumber: 5
     }, this);
 }
@@ -2214,12 +2215,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 function CTA() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "contact",
-        className: "relative overflow-hidden bg-gray-950 py-24 md:py-32",
+        className: "relative overflow-hidden bg-gray-50 py-24 md:py-32",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "pointer-events-none absolute inset-0",
                 style: {
-                    background: 'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(109,40,217,0.35), transparent)'
+                    background: 'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(148,163,184,0.25), transparent)'
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/cyber/CTA.tsx",
@@ -2248,7 +2249,7 @@ function CTA() {
                         },
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "mb-4 text-xs font-semibold uppercase tracking-widest bg-gradient-to-r from-violet-500 to-purple-400 bg-clip-text text-transparent",
+                                className: "mb-4 text-xs font-semibold uppercase tracking-widest text-gray-600",
                                 children: "Get Protected"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cyber/CTA.tsx",
@@ -2256,7 +2257,7 @@ function CTA() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h2, {
-                                className: "text-3xl md:text-5xl font-extrabold text-white leading-tight",
+                                className: "text-3xl md:text-5xl font-extrabold text-gray-950 leading-tight",
                                 whileHover: {
                                     scale: 1.02
                                 },
@@ -2269,7 +2270,7 @@ function CTA() {
                                     "Protect Your Business.",
                                     ' ',
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-purple-400",
+                                        className: "text-gray-700",
                                         children: "Zero Compromises."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cyber/CTA.tsx",
@@ -2283,7 +2284,7 @@ function CTA() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
-                                className: "mt-5 text-lg text-gray-400 max-w-xl mx-auto",
+                                className: "mt-5 text-lg text-gray-600 max-w-xl mx-auto",
                                 whileHover: {
                                     y: -2
                                 },
@@ -2324,7 +2325,9 @@ function CTA() {
                         whileHover: {
                             scale: 1.01
                         },
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$ContactForm$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$ContactForm$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            variant: "light"
+                        }, void 0, false, {
                             fileName: "[project]/src/components/cyber/CTA.tsx",
                             lineNumber: 56,
                             columnNumber: 11
