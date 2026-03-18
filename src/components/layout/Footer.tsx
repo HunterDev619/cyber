@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Twitter, Linkedin, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface FooterProps {
   variant: 'light' | 'dark';
@@ -56,66 +59,107 @@ export default function Footer({ variant }: FooterProps) {
         style={{ maxWidth: '1280px' }}
       >
         {/* Top section: Logo + links grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+        >
           {/* Logo + tagline */}
-          <div className="flex flex-col gap-3">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="Agency Logo"
-                height={32}
-                width={32}
-                className="object-contain"
-              />
+          <motion.div
+            className="flex flex-col gap-3"
+            whileHover={{ y: -4 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 18 }}
+          >
+            <Link href="/" className="flex items-center gap-3">
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-3"
+              >
+                <Image
+                  src="/img/logo.png"
+                  alt="Klara Logo"
+                  height={64}
+                  width={64}
+                  className="object-contain rounded-full shadow-[0_0_18px_rgba(109,40,217,0.35)]"
+                />
+                <span className={`text-lg font-semibold tracking-tight ${headingClass}`}>
+                  klara
+                </span>
+              </motion.div>
             </Link>
             <p className={`text-sm leading-relaxed ${textClass}`}>
               Protecting businesses and automating growth with cutting-edge technology.
             </p>
-          </div>
+          </motion.div>
 
           {/* Link columns */}
           {Object.entries(FOOTER_LINKS).map(([category, links]) => (
-            <div key={category}>
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.4 }}
+            >
               <h3 className={`text-sm font-semibold mb-4 ${headingClass}`}>
                 {category}
               </h3>
               <ul className="flex flex-col gap-2">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className={`text-sm transition-colors ${textClass} ${linkHoverClass}`}
+                    <motion.div
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.97 }}
+                      transition={{ type: 'spring', stiffness: 260, damping: 18 }}
                     >
-                      {link.label}
-                    </Link>
+                      <Link
+                        href={link.href}
+                        className={`text-sm transition-colors ${textClass} ${linkHoverClass}`}
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom section: copyright + social icons */}
-        <div
+        <motion.div
           className={`flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t ${
             isDark ? 'border-gray-800' : 'border-gray-200'
           }`}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.4 }}
         >
           <p className="text-sm">© 2025 Agency. All rights reserved.</p>
 
           <div className="flex items-center gap-4">
             {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
-              <Link
+              <motion.div
                 key={label}
-                href={href}
-                aria-label={label}
-                className={`transition-colors ${textClass} ${iconHoverClass}`}
+                whileHover={{ scale: 1.1, rotate: 3 }}
+                whileTap={{ scale: 0.9, rotate: -3 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 18 }}
               >
-                <Icon size={18} />
-              </Link>
+                <Link
+                  href={href}
+                  aria-label={label}
+                  className={`transition-colors ${textClass} ${iconHoverClass}`}
+                >
+                  <Icon size={18} />
+                </Link>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
